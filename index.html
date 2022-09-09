@@ -15,13 +15,21 @@
         var today = new Date(year, month, 0).getTime();
         var now = new Date().getTime();
         var week = Math.round((now - today) / (1000 * 60 * 60 * 24 * 7));
-        if (week % 2) {
-          document.write("Текущая неделя - Знаменатель ");
-          document.write(new Date());
+
+        var d0 = new Date().getTime(),
+          d = new Date(new Date().getFullYear(), 0, 1),
+          d1 = d.getTime(),
+          dd = d.getDay(),
+          re = Math.floor((d0 - d1) / 8.64e7) + (dd ? dd - 1 : 6);
+        // document.write(
+        //   "Неделя " + (Math.floor(re / 7) % 2 ? "не" : "") + "чётная"
+        // );
+        if (Math.floor(re / 7) % 2) {
+          document.write("Текущая неделя - Числитель ");
         } else {
-          document.write("Текущая неделя - Числитель");
-          document.write(new Date());
+          document.write("Текущая неделя - Знаменатель ");
         }
+        document.write(new Date());
       </script>
     </header>
     <div class="table__text">
