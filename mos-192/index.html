@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mos-192</title>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <header>
+      <script>
+        var year = new Date().getFullYear();
+        var month = new Date().getMonth();
+        var today = new Date(year, month, 0).getTime();
+        var now = new Date().getTime();
+        var week = Math.round((now - today) / (1000 * 60 * 60 * 24 * 7));
+        if (week % 2) {
+          document.write("Текущая неделя - Знаменатель ");
+          document.write(new Date());
+        } else {
+          document.write("Текущая неделя - Числитель");
+          document.write(new Date());
+        }
+      </script>
+    </header>
+    <div class="table__text">
+      <script type="text/javascript" language="javascript">
+        now = new Date();
+        if (week % 2) {
+          if (now.getDay() == 1) document.write();
+          if (now.getDay() == 2) document.write(Tuesday);
+          if (now.getDay() == 3) document.write(WednesdayDenominator);
+          if (now.getDay() == 4) document.write(ThursdayDenominator);
+          if (now.getDay() == 5) document.write();
+          if (now.getDay() == 6) document.write(Saturday);
+        } else {
+          if (now.getDay() == 1) document.write(MondayNumerator);
+          if (now.getDay() == 2) document.write(Tuesday);
+          if (now.getDay() == 3) document.write();
+          if (now.getDay() == 4) document.write(ThursdayNumerator);
+          if (now.getDay() == 5) document.write();
+          if (now.getDay() == 6) document.write(Saturday);
+        }
+      </script>
+    </div>
+  </body>
+</html>
