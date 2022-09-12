@@ -1,14 +1,23 @@
+<!-- Сообщаем браузеру как стоит обрабатывать эту страницу -->
 <!DOCTYPE html>
-<html lang="en">
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+  <!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mos-192</title>
-    <link rel="stylesheet" href="index.css" />
+    <!-- Заголовок страницы в браузере -->
+    <title>Табы на CSS</title>
+    <!-- Подключаем CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- JS -->
     <script src="index.js"></script>
+    <!-- Кодировка страницы -->
+    <meta charset="UTF-8" />
+    <!-- Адаптив -->
+    <meta name="viewport" content="width=device-width" />
   </head>
+  <!-- Отображаемое тело страницы -->
   <body>
+    <!--Определитель числителя-знаменателя-->
     <header>
       <script>
         var year = new Date().getFullYear();
@@ -27,12 +36,15 @@
         // );
         if (Math.floor(re / 7) % 2) {
           document.write("Текущая неделя - Числитель ");
+          window.location.href = "#tab_01";
         } else {
           document.write("Текущая неделя - Знаменатель ");
+          window.location.href = "#tab_02";
         }
         document.write(new Date());
       </script>
     </header>
+    <!--Сегодняшний день-->
     <div class="table__text">
       <script type="text/javascript" language="javascript">
         now = new Date();
@@ -52,6 +64,55 @@
           if (now.getDay() == 6) document.write(Saturday);
         }
       </script>
+    </div>
+    <!-- Оболочка для демонстрации -->
+    <div class="wrapper">
+      <!-- Контент -->
+      <div class="content">
+        <div class="tabs">
+          <nav class="tabs__items">
+            <a href="#tab_01" class="tabs__item"><span>Числитель</span></a>
+            <a href="#tab_02" class="tabs__item"><span>Знаменатель</span></a>
+            <!-- <a href="#tab_03" class="tabs__item"><span>Третья вкладка</span></a> -->
+          </nav>
+          <div class="tabs__body">
+            <div id="tab_01" class="tabs__block">
+              <!--  -->
+              <script>
+                document.write(
+                  "<div class='day'>Понедельник:</div> " + MondayNumerator
+                );
+                document.write("<div class='day'>Вторник:</div> " + Tuesday);
+                document.write(
+                  "<div class='day'>Четверг:</div> " + ThursdayNumerator
+                );
+                document.write("<div class='day'>Суббота:</div> " + Saturday);
+              </script>
+              <!--  -->
+            </div>
+            <div id="tab_02" class="tabs__block">
+              <script>
+                document.write("<div class='day'>Вторник:</div> " + Tuesday);
+                document.write(
+                  "<div class='day'>Среда:</div> " + WednesdayDenominator
+                );
+                document.write(
+                  "<div class='day'>Четверг:</div> " + ThursdayDenominator
+                );
+
+                document.write("<div class='day'>Суббота:</div> " + Saturday);
+              </script>
+            </div>
+            <!-- <div id="tab_03" class="tabs__block">
+              Третья вкладка. Lorem ipsum, dolor sit amet consectetur
+              adipisicing elit. Enim laudantium esse modi aut in recusandae
+              explicabo, doloremque animi sapiente hic nobis ducimus minima
+              distinctio deleniti tempora deserunt cumque amet consequatur.
+            </div> -->
+          </div>
+        </div>
+        <div class="text"></div>
+      </div>
     </div>
   </body>
 </html>
