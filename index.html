@@ -18,58 +18,59 @@
   <!-- Отображаемое тело страницы -->
   <body>
     <!--Определитель числителя-знаменателя-->
-    <header>
-      <script>
-        var year = new Date().getFullYear();
-        var month = new Date().getMonth();
-        var today = new Date(year, month, 0).getTime();
-        var now = new Date().getTime();
-        var week = Math.round((now - today) / (1000 * 60 * 60 * 24 * 7));
 
-        var d0 = new Date().getTime(),
-          d = new Date(new Date().getFullYear(), 0, 1),
-          d1 = d.getTime(),
-          dd = d.getDay(),
-          re = Math.floor((d0 - d1) / 8.64e7) + (dd ? dd - 1 : 6);
-        // document.write(
-        //   "Неделя " + (Math.floor(re / 7) % 2 ? "не" : "") + "чётная"
-        // );
-        if (Math.floor(re / 7) % 2) {
-          document.write("Текущая неделя - Числитель ");
-          window.location.href = "#tab_01";
-        } else {
-          document.write("Текущая неделя - Знаменатель ");
-          window.location.href = "#tab_02";
-        }
-        document.write(new Date());
-      </script>
-    </header>
-    <!--Сегодняшний день-->
-    <div class="table__text">
-      <script type="text/javascript" language="javascript">
-        now = new Date();
-        if (week % 2) {
-          if (now.getDay() == 1) document.write();
-          if (now.getDay() == 2) document.write(Tuesday);
-          if (now.getDay() == 3) document.write(WednesdayDenominator);
-          if (now.getDay() == 4) document.write(ThursdayDenominator);
-          if (now.getDay() == 5) document.write();
-          if (now.getDay() == 6) document.write(Saturday);
-        } else {
-          if (now.getDay() == 1) document.write(MondayNumerator);
-          if (now.getDay() == 2) document.write(Tuesday);
-          if (now.getDay() == 3) document.write();
-          if (now.getDay() == 4) document.write(ThursdayNumerator);
-          if (now.getDay() == 5) document.write();
-          if (now.getDay() == 6) document.write(Saturday);
-        }
-      </script>
-    </div>
     <!-- Оболочка для демонстрации -->
     <div class="wrapper">
       <!-- Контент -->
       <div class="content">
         <div class="tabs">
+          <header>
+            <script>
+              var year = new Date().getFullYear();
+              var month = new Date().getMonth();
+              var today = new Date(year, month, 0).getTime();
+              var now = new Date().getTime();
+              var week = Math.round((now - today) / (1000 * 60 * 60 * 24 * 7));
+
+              var d0 = new Date().getTime(),
+                d = new Date(new Date().getFullYear(), 0, 1),
+                d1 = d.getTime(),
+                dd = d.getDay(),
+                re = Math.floor((d0 - d1) / 8.64e7) + (dd ? dd - 1 : 6);
+              // document.write(
+              //   "Неделя " + (Math.floor(re / 7) % 2 ? "не" : "") + "чётная"
+              // );
+              if (Math.floor(re / 7) % 2) {
+                document.write("Текущая неделя - Числитель ");
+                window.location.href = "#tab_01";
+              } else {
+                document.write("Текущая неделя - Знаменатель ");
+                window.location.href = "#tab_02";
+              }
+              document.write(new Date());
+            </script>
+          </header>
+          <!--Сегодняшний день-->
+          <div class="table__text">
+            <script type="text/javascript" language="javascript">
+              now = new Date();
+              if (week % 2) {
+                if (now.getDay() == 1) document.write();
+                if (now.getDay() == 2) document.write(Tuesday);
+                if (now.getDay() == 3) document.write(WednesdayDenominator);
+                if (now.getDay() == 4) document.write(ThursdayDenominator);
+                if (now.getDay() == 5) document.write();
+                if (now.getDay() == 6) document.write(Saturday);
+              } else {
+                if (now.getDay() == 1) document.write(MondayNumerator);
+                if (now.getDay() == 2) document.write(Tuesday);
+                if (now.getDay() == 3) document.write();
+                if (now.getDay() == 4) document.write(ThursdayNumerator);
+                if (now.getDay() == 5) document.write();
+                if (now.getDay() == 6) document.write(Saturday);
+              }
+            </script>
+          </div>
           <nav class="tabs__items">
             <a href="#tab_01" class="tabs__item"><span>Числитель</span></a>
             <a href="#tab_02" class="tabs__item"><span>Знаменатель</span></a>
